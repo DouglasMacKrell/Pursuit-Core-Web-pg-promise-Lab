@@ -16,8 +16,8 @@ app.use(express.json())
 const usersRouter = require("./routes/usersRouter")
 app.use("/users", usersRouter)
 
-// const likesRouter = require("./routes/likesRouter")
-// app.use("/likes", likesRouter)
+const likesRouter = require("./routes/likesRouter")
+app.use("/likes", likesRouter)
 
 const postsRouter = require("./routes/postsRouter")
 app.use("/posts", postsRouter)
