@@ -43,6 +43,35 @@ INSERT INTO posts (poster_id, body)
           (5, 'I like turtles'),
           (5, 'My favorite number is 8');
 
+-- Add some likes
+INSERT INTO likes (liker_id, post_id)
+    VALUES(1, 1),
+    (1, 2),
+    (1, 3),
+    (1, 4),
+    (1, 5),
+    (1, 6),
+    (1, 7),
+    (1, 8),
+    (1, 9),
+    (1, 10),
+    (2, 4),
+    (2, 9),
+    (3, 6),
+    (4, 1),
+    (4, 2),
+    (4, 3),
+    (4, 4),
+    (4, 5),
+    (5, 4),
+    (5, 5),
+    (5, 6),
+    (5, 7),
+    (5, 8),
+    (5, 9),
+    (5, 10);
+
 -- Let's verify that the users and posts were inserted 
 SELECT * FROM users;
 SELECT * FROM posts;
+SELECT * FROM likes;

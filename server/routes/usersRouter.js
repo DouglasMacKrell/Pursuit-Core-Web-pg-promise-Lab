@@ -36,8 +36,8 @@ router.post("/register", async (req, res) => {
         res.json({
             message: "Oops! All Errors!"
         })
+        console.log(error)
     }
-    console.log(error)
 })
 
 module.exports = router
