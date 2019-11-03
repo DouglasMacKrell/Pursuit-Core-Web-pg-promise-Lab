@@ -29,7 +29,7 @@ router.get("/:user_id", async (req, res) => {
         let targetRaw = req.params
         let targetLock = parseInt(targetRaw.user_id)
         console.log(targetLock)
-        let targetPost = db.any(`SELECT * FROM posts WHERE poster_id = ${targetLock}`)
+        let targetPost = await db.any(`SELECT * FROM posts WHERE poster_id = ${targetLock}`)
         res.json({
             payload: targetPost,
             message: "Here be the posts of ONE user, ye land lubber!"
@@ -42,5 +42,23 @@ router.get("/:user_id", async (req, res) => {
     }
 })
 
+router.post("/new", async (req, res) => {
+    try {
+        let insertQuery = `
+        INSERT INTO posts (poster_id, body)
+        VALUES($1, $2)
+        `
+        await db.none(insertQuery, [req.body.poster_id, req.body.body])
+        res.json({
+            payload: req.body,
+            message: "Blast Me Barnacles! Your post has been saved!"
+        })
+    } catch (error) {
+        res.json({
+            message: "Oops! All errors!"
+        })
+        console.log(error)
+    }
+})
 
 module.exports = router;
