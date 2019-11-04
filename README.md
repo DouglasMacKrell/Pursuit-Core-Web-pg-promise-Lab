@@ -10,7 +10,7 @@ Complete the `posts.js` file adding implementations for the following routes
 
 - /posts/all
 - /posts/:user_id
-- /posts/register
+- /posts/new
 
 ### Frontend
 
@@ -34,5 +34,8 @@ Seed the database with likes.
 Then, add the following functionality:
 
 - Display the number of likes of each post
+    - /all 
 - Display users who have liked each post
+    - /:post_id
 - Filter posts by the number of likes (e.g show only posts with 5+ likes)
+    - /all/:num_of_likes

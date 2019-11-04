@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     loadUsers();
-    const form = document.querySelector('#addUserForm');
+    const form = document.querySelector('#add-user-form');
     form.addEventListener('submit', addUserFormSubmitted);
 });
 
 async function loadUsers() {
-    const usersList = document.querySelector('#usersList');
+    const usersList = document.querySelector('#users-list');
     usersList.innerHTML = "";
 
     const response = await axios.get(`http://localhost:3000/users/all`);
